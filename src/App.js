@@ -216,14 +216,15 @@ class App extends Component {
           <Dashboard Credits={this.state.creditTransactions} Debits={this.state.debitTransactions} Withdraw={this.Withdraw} Transfer={this.Transfer} Deposit={this.Deposit} UserDetails={this.state.user} Logout={this.Logout} />
         ) : (
           <div className="auth">
-            <span className="gradient__text banking_application">Banking Application</span>
+            <span className="gradient__text banking_application" id="company-name">Banking Application</span>
             {(this.state.curPage === "login") ? (
               <Login Login={this.LoginStatus} CurPage={this.SetCurrentPage} error={this.error} />
             ) : (
               <Signup Signup={this.LoginStatus} CurPage={this.SetCurrentPage} error={this.error} />
             )}
           </div>
-        )}
+        )
+        }
       </div>
     )
   }

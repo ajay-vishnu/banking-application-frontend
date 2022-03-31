@@ -3,19 +3,77 @@ body{
   padding: 0;
   font-family: var(--font-family);
 } 
+button{
+  margin: 2px 2px px 2px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 6%;
+  display: block;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {background-color: #11a07c}
 
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px rgb(148, 0, 161);
+  transform: translateY(4px);
+}
+.dashboard{
+  font-size: 38px;
+  color: rgb(0, 0, 0);
+}
+.logout{
+  margin-left: 90%;
+  /* align-items: flex-end; */
+}
+.dashboard1{
+  color: white;
+  margin: 20px 20% 20px 20%;
+  align-items: center;
+background: linear-gradient(to bottom, #ffffff -42%, #000000 100%);
+  padding: 40px 20px 40px 40px;
+}
+
+.banking__dashboard-transactions_deposit{animation: mymove 5s reverse;
+position: relative;}
+.banking__dashboard-transactions_withdraw{animation: mymove 5s reverse;
+position: relative;}
+.banking__dashboard-transactions_transfer{animation: mymove 5s reverse;
+position: relative;}
+.banking__dashboard-transactions_deposit {animation-timing-function: linear;}
+.banking__dashboard-transactions_withdraw {animation-timing-function: ease;}
+.banking__dashboard-transactions_transfer {animation-timing-function: ease-in;}
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 300px;}}
+/* #div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;} */
+.banking__dashboard{
+  padding: 10px 10px 10px 10px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-image: url(https://wallpaperaccess.com/full/95239.jpg); */
+  background-size: cover;
+  font-weight: 400;
+  font-family: monospace;
+}
 .banking__dashboard-transactions div  {
   display: inline-block;
   margin: 1rem 1.6rem;
+  padding: 10px 10px 10px 10px;
   width: 24%;
-  height: 15rem;
-  background-color: white;
-  border-radius: 10px;
+  height: 18rem;
+  color: aliceblue;
+  background-color: rgb(85, 85, 85);
+  /* border-radius: 10px; */
   align-content: center;
 }
-
 .banking__dashboard-transactions div * {
   display: block;
+  font-weight: 300;
+  margin: 2px 2px 2px 2px;
   align-self: center;
 }
 
@@ -29,3 +87,6 @@ body{
   background: none;
   outline: none;
 } */
+
+
+

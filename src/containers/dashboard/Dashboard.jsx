@@ -22,13 +22,19 @@ const Dashboard = ({ Credits, Debits, Withdraw, Transfer, Deposit, UserDetails, 
   
   return (
     <div className="banking__dashboard">
+      <div className='dashboard1'>
       <h2>Name: {UserDetails.name}</h2>
       <h2>Email: {UserDetails.email}</h2>
       <h2>Account Number: {UserDetails.accountNumber}</h2>
       <h2>Account Balance: {UserDetails.accountBalance}</h2>
-      <h2>User phone: {UserDetails.phone}</h2>
-      Dashboard
-      <button onClick={Logout}>Logout</button>
+        <h2>User phone: {UserDetails.phone}</h2>
+      </div>
+      <br />
+      <br />
+
+      <h2 className='dashboard' > Dashboard </h2>
+      <button className='logout' onClick={Logout}> Logout</button>
+
       <div className="banking__dashboard-transactions">
         <div className="banking__dashboard-transactions_deposit">
           <h2>Deposit</h2>
@@ -62,7 +68,8 @@ const Dashboard = ({ Credits, Debits, Withdraw, Transfer, Deposit, UserDetails, 
           <input type="text" name="transfer_message" id="transfer_message"  onChange={e => setTransferDetails({...transferDetails, transferMessage: e.target.value})} value={transferDetails.transferMessage}/>
           <button onClick={() => transferHandler()}>Transfer</button>
         </div>
-      </div>
+        </div>
+      
       <h2>Credits:</h2>
       <table className="table bg-white rounded shadow-sm table-hover">
         <thead>
@@ -78,11 +85,11 @@ const Dashboard = ({ Credits, Debits, Withdraw, Transfer, Deposit, UserDetails, 
         <tbody>
           {Credits.map((transaction, index) => {
             return <tr>
-              <th scope="row">{index}</th>
+              <th scope="row">{index + 1}</th>
               <td>{transaction.createdAt}</td>
               <td>{transaction.creditAmount}</td>
               <td>{transaction.message}</td>
-              <td>{transaction.senderUserAccount}</td>
+              <td>{transaction.sentUserAccount.holderName}</td>
               <td>{transaction.accountBalance}</td>
             </tr>
           })}
@@ -103,11 +110,11 @@ const Dashboard = ({ Credits, Debits, Withdraw, Transfer, Deposit, UserDetails, 
         <tbody>
           {Debits.map((transaction, index) => {
             return <tr>
-              <th scope="row">{index}</th>
+              <th scope="row">{index + 1}</th>
               <td>{transaction.createdAt}</td>
               <td>{transaction.debitAmount}</td>
               <td>{transaction.message}</td>
-              <td>{transaction.sentUserAccount}</td>
+              <td>{transaction.receivedUserAccount.holderName}</td>
               <td>{transaction.accountBalance}</td>
             </tr>
           })}
